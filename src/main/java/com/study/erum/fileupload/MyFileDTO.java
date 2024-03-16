@@ -1,6 +1,14 @@
 package com.study.erum.fileupload;
 
-public class MyfileDTO {
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+
+
+
+public class MyFileDTO {
 
 	private String idx;
 	private String title;
@@ -9,10 +17,4 @@ public class MyfileDTO {
 	private String sfile;
 	private String postdate;
 	
-	public String getIdx() {
-		return idx;
 	}
-	public void setIdx(String idx) {
-		this.idx = idx;
-	}
-}

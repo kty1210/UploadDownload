@@ -6,7 +6,7 @@ import java.util.Vector;
 
 public class MyFileDAO extends DBConnPool{
 
-	public int inserFile(MyFileDTO dto) {
+	public int insertFile(MyFileDTO dto) {
 		
 		int applyResult = 0;
 		

@@ -8,7 +8,7 @@
 </head>
 <script>
 	function validateForm(form) {
-		if (forn.title.vlaue == ""){
+		if (form.title.value == ""){
 			alert("제목을 입력하세요.");
 			form.title.focus();
 			return false;

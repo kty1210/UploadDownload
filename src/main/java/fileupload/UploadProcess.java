@@ -58,7 +58,6 @@ public class UploadProcess extends HttpServlet {
 	            cateBuf.append(s + ", ");
 	        }
 	    }
-	    System.out.println("파일외폼값:"+title +"\n"+ cateBuf);
 	    
 		//DB에 입력하기
         MyFileDTO dto = new MyFileDTO();

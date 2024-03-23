@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/13FileUpload/UploadProcess.do")
+@WebServlet("/UploadProcess.do")
 @MultipartConfig(
 	maxFileSize = 1024 * 1024 * 1,
 	maxRequestSize = 1024 * 1024 * 10
@@ -22,9 +22,9 @@ public class UploadProcess extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			//드라이브 명으로 절대경로 지정하기 
-			//String saveDirectory = "C:/02Workspaces/MustHaveJSP/src/main/webapp/Uploads";
+			String saveDirectory = "C:/kdt_kty/ecl_data/UploadDownload/src/main/webapp/Uploads";
 			//Uploads 디렉토리의 물리적 경로 가져오기
-		    String saveDirectory = getServletContext().getRealPath("/Uploads");
+		    //String saveDirectory = getServletContext().getRealPath("/Uploads");
 		    
 		    //파일 업로드 하기
 		    String originalFileName = FileUtil.uploadFile(req, saveDirectory);

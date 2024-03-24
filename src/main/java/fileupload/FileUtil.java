@@ -22,14 +22,17 @@ public class FileUtil {
 		//content-disposition attachment : 파일 저장하도록 요청
 		//content-disposition inline : 파일 페이지내에서 보이도록 요청
         String partHeader = part.getHeader("content-disposition");
-        //출력결과 => form-data; name="attachedFile"; filename="파일명.jpg"
+        //content-disposition형식 => form-data; name="여기선ofile(input Name)"; filename="파일명.jpg"
         System.out.println("partHeader="+ partHeader);
          
         //헤더값에서 파일명 잘라내기
+        //filename= 기준으로 두 개로 분할 
+        //"filename=" 이 부분은 어디에도 포함안됨
         String[] phArr = partHeader.split("filename=");
         String originalFileName = phArr[1].trim().replace("\"", "");
 		
-		//전송된 파일이 있다면 디렉토리에 저장
+		//전송된 파일 이름이 비어있지 않다면 디렉토리에 저장
+        //File.separator 파일 경로의 구분자를 나타내는 문자열
 		if (!originalFileName.isEmpty()) {				
 			part.write(sDirectory+ File.separator +originalFileName);
 		}
